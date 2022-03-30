@@ -1,0 +1,53 @@
+.a-link {
+  color: #448ef7;
+  cursor: pointer;
+  user-select: none;
+}
+
+.relative {
+  position: relative;
+}
+.copy-animation {
+  position: absolute;
+  width: var(--copy-animation-width);
+  height: var(--copy-animation-width);
+  background-color: transparent;
+  // animation: bounce alternate infinite cubic-bezier(0.2, 0.65, 0.6, 1);
+  animation-duration: 300ms;
+  animation-name: copy;
+  animation-timing-function: ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  // animation-iteration-count: inherit;
+}
+@keyframes copy {
+  0% {
+    border-radius: 0px;
+  }
+  30% {
+    background-color: rgba(68, 142, 247, 0.7);
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    border-radius: var(--copy-animation-width);
+    background-color: rgba(68, 142, 247, 0);
+  }
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用 iOS Safari*/
+  -webkit-user-select: none;
+  /*webkit浏览器 Chrome/Safari/Opera*/
+  -khtml-user-select: none;
+  /*早期浏览器 Konqueror*/
+  -moz-user-select: none;
+  /*火狐 Firefox*/
+  -ms-user-select: none;
+  /*IE10 Internet Explorer/Edge*/
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
